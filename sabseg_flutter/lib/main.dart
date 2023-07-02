@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sabseg_flutter/profile_page.dart';
 
 import 'home_page.dart';
 
@@ -13,7 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.purple),
+      theme:
+          ThemeData(brightness: Brightness.light, primarySwatch: Colors.purple),
+      darkTheme:
+          ThemeData(brightness: Brightness.dark, primarySwatch: Colors.purple),
+      themeMode: ThemeMode.light,
       home: RootPage(),
     );
   }
@@ -29,14 +34,15 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   int currentPage = 0;
+  List<Widget> pages = const [HomePage(), ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Old Skull Productions'),
+        title: Text('Old Skull Productions'),
       ),
-      body: const HomePage(),
+      body: pages[currentPage],
       floatingActionButton: FloatingActionButton(
           onPressed: () {
             debugPrint('pressed');
