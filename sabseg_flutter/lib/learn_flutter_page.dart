@@ -14,7 +14,7 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         title: const Text('Learn Flutter'),
         automaticallyImplyLeading: false,
@@ -74,9 +74,9 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
               onTap: () {
                 debugPrint('Row');
               },
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
+                children: [
                   Icon(
                     Icons.local_fire_department,
                     color: Colors.blue,

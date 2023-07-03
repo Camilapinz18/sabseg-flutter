@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       darkTheme:
           ThemeData(brightness: Brightness.dark, primarySwatch: Colors.purple),
       themeMode: ThemeMode.light,
-      home: RootPage(),
+      home: const RootPage(),
     );
   }
 }
@@ -40,7 +40,7 @@ class _RootPageState extends State<RootPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Old Skull Productions'),
+        title: const Text('Old Skull Productions'),
       ),
       body: pages[currentPage],
       floatingActionButton: FloatingActionButton(
